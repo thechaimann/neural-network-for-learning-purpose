@@ -71,7 +71,7 @@ class Network:
             for neuron in layer.neurons:
                 neuron.bias += learning_rate * neuron.gradient
                 for i in range(len(neuron.weights)):
-                    neuron.weights[i] -= learning_rate * neuron.gradient * neuron.last_input[i]
+                    neuron.weights[i] += learning_rate * neuron.gradient * neuron.last_input[i]
 
 class Trainer:
     def __init__(self, network):
